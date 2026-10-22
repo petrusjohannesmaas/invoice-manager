@@ -13,11 +13,13 @@ export default defineConfig({
   }),
 
   // The dev server's port, from ~/Code/ports.toml on runner (dev-port get invoice-manager).
-  // strictPort makes Astro stop when the port is taken instead of moving to one
-  // that dev-https does not serve. allowedHosts is the tailnet name dev-https serves on.
-  server: { port: 8101, strictPort: true, allowedHosts: ['runner.tail9f6fa3.ts.net'] },
+  // allowedHosts is the tailnet name dev-https serves on.
+  server: { port: 8101, allowedHosts: ['runner.tail9f6fa3.ts.net'] },
 
   vite: {
+    // Stop when the port is taken instead of moving to one dev-https does not
+    // serve. Astro's own `server` has no strictPort and drops one put there.
+    server: { strictPort: true },
     plugins: [tailwindcss()]
   }
 });

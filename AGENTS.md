@@ -1,6 +1,6 @@
 ## Development
 
-The dev server runs on runner on port 8101, the port `~/Code/ports.toml` gives this project (`dev-port get invoice-manager`). `astro.config.mjs` sets it with `strictPort`, so Astro stops with an error when 8101 is taken instead of moving to a port nothing serves. Start it in the foreground under `dev-https`, which serves it at `https://runner.tail9f6fa3.ts.net:8101` on the tailnet while it runs and stops serving when it ends:
+The dev server runs on runner on port 8101, the port `~/Code/ports.toml` gives this project (`dev-port get invoice-manager`). `astro.config.mjs` sets it, with Vite's `strictPort`, so Astro stops with an error when 8101 is taken instead of moving to a port nothing serves. Start it in the foreground under `dev-https`, which serves it at `https://runner.tail9f6fa3.ts.net:8101` on the tailnet while it runs and stops serving when it ends:
 
 ```
 dev-https 8101 -- npm run dev
